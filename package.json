@@ -22,9 +22,12 @@
   },
   "dependencies": {
     "body-parser": "^1.4.3",
+    "cors": "^2.8.5",
     "db-migrate": "^0.6.4",
+    "ejs": "^3.1.10",
     "express": "^4.5.1",
     "pg": "^3.4.0",
-    "pg.js": "^3.3.0"
+    "pg.js": "^3.3.0",
+    "todo-backend-express": "file:"
   }
 }

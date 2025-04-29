@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>To Do</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+</head>
+<body>
+
+<div class="todo-container">
+    <div class="header">
+        <h1 class="title">To Do</h1>
+
+        <div class="tabs">
+            <div class="tab active" data-tab="tyo">Työ</div>
+            <div class="tab" data-tab="arki">Arki</div>
+        </div>
+    </div>
+
+    <div class="tasks" id="taskList">
+    </div>
+
+    <button id="plusButtonToAddToDo">+</button>
+</div>
+
+<!-- popup -->
+<div id="popupOverlay" class="overlay hidden">
+    <div class="popup">
+        <label for="taskTitle" class="popup-label">Tehtävä *</label>
+        <input type="text" id="taskId" placeholder="" hidden>
+        <input type="text" id="taskTitle" placeholder="Tehtävän nimi" required>
+
+        <label for="dueDate" class="popup-label">Määräaika:</label>
+        <input type="date" id="dueDate">
+
+        <label for="priority" class="popup-label">Prioriteetti:</label>
+        <input type="number" id="priority" min="1" max="5" value="1">
+
+        <div class="popup-buttons">
+            <button id="deleteBtn">Poista</button>
+            <button id="cancelBtn">Peruuta</button>
+            <button id="saveBtn">Valmis</button>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

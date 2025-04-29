@@ -1,0 +1,223 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  height: 100vh;
+  width: 100%;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.todo-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 90vh;
+  width: 80%;
+  max-width: 1000px;
+  border: 2px solid black;
+  border-radius: 10px;
+  background: white;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+/* Header */
+.header {
+  background-color: white;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  gap: 20px;
+}
+
+.tab {
+  padding: 10px 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.tab.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+/* Tasks Area */
+.tasks {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+/* Plus Button */
+#plusButtonToAddToDo {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  width: 70px;
+  height: 70px;
+  font-size: 36px;
+  background-color: #4CAF50;
+  color: white;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0px 4px 6px rgba(0,0,0,0.3);
+  transition: 0.3s;
+}
+
+#plusButtonToAddToDo:hover {
+  background-color: #45a049;
+  transform: scale(1.1);
+}
+
+/* Popup */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.overlay.hidden {
+  display: none;
+}
+
+.popup {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.popup h2 {
+  margin-bottom: 10px;
+}
+
+.popup input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.popup-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.popup-buttons button {
+  flex: 1;
+  padding: 10px;
+  margin: 0 5px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+#deleteBtn {
+  background: #e74c3c;
+  color: white;
+}
+
+#cancelBtn {
+  background: #95a5a6;
+  color: white;
+}
+
+#saveBtn {
+  background: #4CAF50;
+  color: white;
+}
+
+/* Labels inside popup */
+.popup-label {
+  font-weight: bold;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+/* Task */
+.task-item {
+  background: white;
+  padding: 15px 20px;
+  margin-bottom: 15px;
+  border: 2px solid #ddd;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  transition: box-shadow 0.3s;
+}
+
+.task-item:hover {
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.task-content {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.check-circle {
+  width: 30px;
+  height: 30px;
+  border: 2px solid #4CAF50;
+  border-radius: 50%;
+  margin-right: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.3s;
+  background: white;
+  color: transparent;
+}
+
+.check-circle.checked {
+  background: #4CAF50;
+  color: white;
+}
+
+.task-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.task-title {
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.task-meta {
+  font-size: 14px;
+  color: #666;
+}
